@@ -5,7 +5,6 @@ import image1 from '../../src/Assets/images/login2.png'
 import image2 from '../../src/Assets/images/select.png'
 import image3 from '../../src/Assets/images/Branches.png'
 import image4 from '../../src/Assets/images/owners.png'
-import arrow from '../../src/Assets/images/animated-arrow-form.gif'
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
