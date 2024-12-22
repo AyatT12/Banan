@@ -1,0 +1,76 @@
+
+.button .btn {
+    display: inline-block;
+    text-transform: capitalize;
+     font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 16px;
+    padding: 15px 24px;
+    color: #fff;
+    border: none;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    border-radius: 6px;
+  }
+  
+  
+  
+  .button .btn-alt {
+    background-color: #47a3ff;
+    color: #fff;
+  }
+  
+  
+  
+  .btn-primary {
+      background-color: #0183C0;
+      color: #fff;
+  }
+  .btn-trial:hover{
+    background-color: #04852a;
+    border-color:#04852a ;
+
+  }
+  .btn-secondary {
+      background-color: #CC8300;
+      color: #fff;
+  }
+  
+  
+  .btn-white {
+      background-color: #fff;
+      color: #434345!important;  
+      border: 1px solid #eee;
+  }
+  
+  /*.newsletter-area .subscribe-text .button .btn {*/
+  /*  height: 52px;*/
+  /*}*/
+  
+  
+  .button .btn-default-outline {
+    background-color: transparent;
+    border: 1px solid #0183C0;
+    color: #3C4042;
+    letter-spacing: 0;
+  }
+  
+  
+  .button .btn-alt:hover {
+    background-color: #3763EB;
+    color: #fff!important;
+  }
+  
+  .button .btn:hover {
+    background-color: #CC8300;
+    color: #fff!important;
+    -webkit-box-shadow: 0 1rem 3rem rgba(35, 38, 45, 0.15) !important;
+            box-shadow: 0 1rem 3rem rgba(35, 38, 45, 0.15) !important;
+    -webkit-transform: translate3d(0, -5px, 0);
+            transform: translate3d(0, -5px, 0);
+  }
+  
+  .navbar .button .btn {
+      font-size: 13px;
+  }
