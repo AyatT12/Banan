@@ -811,11 +811,6 @@ border:2px solid #0184c021;
 .contact_anchor:hover{
   color:black;
 }
-/* contract */
-#contract{
-  font-weight: 500;
-  font-size: 1rem;
-}
 .contract_input{
   /* max-width: 300px; */
   border: 2px solid #8bc4dd;
@@ -991,7 +986,7 @@ border-radius: 8px;
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 #contract{
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.06rem;
 }
 .contract_input{
 
@@ -1262,4 +1257,9 @@ body::-webkit-scrollbar-thumb:hover {
   border-radius: 8px;
 }
 /* //////////////// */
-
+.PdfIcon img{
+height: 60px;
+}
+.chakra-collapse{
+  font-size: 1rem;
+}

@@ -38,7 +38,6 @@ export default function ContractCheck() {
                </div>
 
               <div className="varificationCard m-2 mb-3">
-
                   <RenterVerifyCode  renterId={renterId} showVerificationInput={showVerificationInput}  SetIdErrorMsg={SetIdErrorMsg}/>
               </div>
             </div>

@@ -10,7 +10,7 @@ export default function BenanFeatures() {
                     مميزات بنان
                     </Trans> 
                </h2>
-                <h5 className="pt-3"> <Trans i18nKey="benan-features-subtitle">افضل خيار لإدارة شركات و مكاتب تأجير السيارات</Trans></h5>
+                {/* <h5 className="pt-3"> <Trans i18nKey="benan-features-subtitle">افضل خيار لإدارة شركات و مكاتب تأجير السيارات</Trans></h5> */}
             </div>
             <div className="row col-mb-50 mb-0 mt-4 g-5  wow fadeInUp " data-wow-delay=".5s">
                 <div className="col-lg-4 col-md-6">

@@ -19,14 +19,13 @@ export default function Home() {
                                         <Trans i18nKey="benan" >
                                             بنان
                                         </Trans>
-                                        ....
                                     </h1>
                                     <p className="wow fadeInUp" data-wow-delay=".5s">
                                         <Trans i18nKey="start">
 
-                                            يكفيك الكثير
+                                            يكفيك الكثير ...  
                                             <br />
-                                            نعمل للارتقاء بقطاع تأجير السيارات وتوفير تقنية متقدمة
+                                            نعمل للارتقاء بقطاع تأجير السيارات وتوفير تقنيات متقدمة
                                         </Trans>
                                     </p>
 
@@ -68,7 +67,7 @@ export default function Home() {
                                 <Trans i18nKey="benan"> بنان</Trans>
                             </h6>
                             <p>
-                                <Trans i18nKey="benan-features-subtitle"> افضل خيار لإدارة شركات و مكاتب تأجير السيارات </Trans>
+                                <Trans i18nKey="benan-features-subtitle"> أفضل خيار لإدارة شركات و مكاتب تأجير السيارات </Trans>
                             </p>
                             <div className="button">
                                 <Link to={'/trialversion'} href="Request_Trial.html" className="btn btn-white mx-lg-2">

@@ -193,17 +193,17 @@ const SearchQuestion = ({ AdminQuestionsList, BranchesQuestionsList , OwnersQues
 
         </div>
       </div>
-      <h2 className="faq-title mb-4" > <Trans i18nKey="common-question-mangement">الأسئلة الشائعة عن النظام الإداري :</Trans> </h2>
+      <h2 className="faq-title mb-4" > <Trans i18nKey="common-question-mangement">الأسئلة الشائعة عن النظام الإداري </Trans> </h2>
       <Accordion allowToggle>
         {renderAccordionItems(AdminQuestionsListarray)}
       </Accordion>
 
-      <h2 className="faq-title mb-3 mt-3" > <Trans i18nKey="common-question-mangement">الأسئلة الشائعة عن نظام الفروع :</Trans> </h2>
+      <h2 className="faq-title mb-3 mt-3" > <Trans i18nKey="common-question-Branches">الأسئلة الشائعة عن نظام الفروع </Trans> </h2>
       <Accordion allowToggle>
         {renderAccordionItems(BranchesQuestionsListarray)}
       </Accordion>
 
-      <h2 className="faq-title mb-3 mt-3" > <Trans i18nKey="common-question-mangement">الأسئلة الشائعة عن نظام الملاك :</Trans> </h2>
+      <h2 className="faq-title mb-3 mt-3" > <Trans i18nKey="common-question-Owners">الأسئلة الشائعة عن نظام الملاك </Trans> </h2>
       <Accordion allowToggle>
         {renderAccordionItems(OwnersQuestionsListarray)}
       </Accordion>

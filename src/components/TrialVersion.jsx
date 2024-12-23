@@ -35,7 +35,7 @@ export default function TrialVersion() {
         formData.append(key, values[key]);
       }
       try {
-        const response = await axios.post('http://45.63.18.63/BnanApi/api/Email', formData);
+        const response = await axios.post('https://bnan.ghyum.sa/BnanApi/api/Email', formData);
         console.log(response);
         setsubmitted(true)
       } catch (error) {

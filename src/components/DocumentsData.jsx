@@ -4,20 +4,22 @@ import { useTranslation, Trans } from 'react-i18next';
 import axios from 'axios';
 import logo from '../../src/Assets/images/benan_logo.svg';
 import { useLocation } from 'react-router-dom';
+import contractslogo from '../../src/Assets/images/contract.svg';
+import Invoice from '../../src/Assets/images/Invoice.svg';
+import naql from '../../src/Assets/images/naql.svg';
+import Pdf from '../../src/Assets/images/pdf.png';
 
 export default function DocumentsData() {
 
   const location = useLocation();
   const { RenterId, OTP } = location.state || {}; 
-  console.log("Navigating with:", { RenterId, OTP });
-
   const { t, i18n } = useTranslation()
   const [Isloading, setIsloading] = useState(false)
   const [RenterName, SetRenterName] = useState()
   const [Categories, SetCategories] = useState()
   const [Files, SetFiles] = useState()
   const [Data, SetData] = useState()
-
+  const[FileICon , SetFileIcon]  = useState()
   const [activeCategory, setActiveCategory] = useState(
     Categories && Categories.length > 0 ? Categories[0].id : null
   );
@@ -27,11 +29,20 @@ export default function DocumentsData() {
 
   useEffect(() => {
     if (Categories && Categories.length > 0) {
-      setActiveCategory(Categories[0].id);
-      SetFiles(Data?.data.data.find((index) => index.id === Categories[0].id)?.files);
+      const initialCategory = Categories[0].id;
+      setActiveCategory(initialCategory);
+      SetFiles(Data?.data.data.find((index) => index.id === initialCategory)?.files);
+  
+      if (initialCategory === "401") {
+        SetFileIcon(contractslogo);
+      } else if (initialCategory === "308" || initialCategory === "309") {
+        SetFileIcon(Invoice);
+      } else {
+        SetFileIcon(Pdf);
+      }
     }
-
-  }, [Categories]);
+  }, [Categories, Data]);
+  
 
   async function GetRenterInfo() {
     setIsloading(true)
@@ -43,8 +54,7 @@ export default function DocumentsData() {
       SetCategories(data.data.data)
       SetRenterName(data.data.renterInfo)
       SetFiles(data?.data.data.find((index) => index.id === activeCategory)?.files)
-      console.log(Files)
-      console.log(data)
+    
     } catch (error) {
       console.log(error)
     }
@@ -53,8 +63,14 @@ export default function DocumentsData() {
   const handleButtonClick = (id) => {
     setActiveCategory(id);
     SetFiles(Data?.data.data.find((index) => index.id === id)?.files);
-  };
-
+    if (id === "401") {
+      SetFileIcon(contractslogo);
+    } else if (id === "308" || id === "309") {
+      SetFileIcon(Invoice);
+    } else {
+      SetFileIcon(Pdf);
+    }
+  }
   return <>
     <div className="section">
       <div className="container mt-5 pt-3">
@@ -97,7 +113,7 @@ export default function DocumentsData() {
                     <tr key={i}>
                       <td>
                         <div className="row">
-                          <div className="col col-xl-9">
+                          <div className="col ">
                             <div className="row">
                               <div className="col-md-auto">
                                 <p className='Titles'> 
@@ -140,15 +156,26 @@ export default function DocumentsData() {
                             </div>
                           </div>
                           <div className="col-md-auto">
-                            <button className="btn btn-Pictures">
+                            <button className="btn PdfIcon">
                               <a
                                 href={document.body.dir === 'rtl' ?`https://system.ghyum.sa${index.arPdfPath}`.replace(/~/g, ''):`https://system.ghyum.sa${index.enPdfPath}`.replace(/~/g, '')}
                                 target="_blank"
                                 rel="noopener noreferrer"
                               >
-                              <Trans i18nKey="DownloadDoc">تحميل المستند</Trans>
+                               <img src={FileICon}/> 
                              </a>
                             </button>
+                             {activeCategory === "401"&&(
+                              <button className="btn PdfIcon">
+                              <a
+                                href={`https://system.ghyum.sa${index.tgaPdfPath}`.replace(/~/g, '')}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                              <img src={naql}/> 
+                             </a>
+                            </button>
+                            )}
                           </div>
                         </div>
                       </td>

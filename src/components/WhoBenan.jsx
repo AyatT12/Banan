@@ -21,7 +21,7 @@ export default function WhoBenan() {
                         <h2 className="wow fadeInUp" data-wow-delay=".5s">
                         <Trans  i18nKey="benan"> بنان </Trans>
                         </h2>
-                        <h5 className="wow fadeInUp pt-3" data-wow-delay=".9s"> <Trans i18nKey="subtitle">خيار لإدارة شركات و مكاتب تأجير السيارات</Trans>
+                        <h5 className="wow fadeInUp pt-3" data-wow-delay=".9s"> <Trans i18nKey="subtitle">الخيار الأمثل لإدارة شركات ومكاتب تأجير السيارات</Trans>
                         </h5>
                     </div>
                 </div>
@@ -49,7 +49,7 @@ export default function WhoBenan() {
 
                                         <h3><Trans i18nKey="about">لمحة عن بنان </Trans> </h3>
                                         <p className="pt-2"> <Trans i18nKey="about-description">يوفر نظام بنان احتياجات شركات و مكاتب تأجير السيارات مع
-                                            خاصية الربط الألي مع الجهات ذات العلاقة و تحويل المنشأة إلى نظام آلي
+                                            خاصية الربط الآلي مع الجهات ذات العلاقة و تحويل المنشأة إلى نظام آلي
                                             متكامل، و نعتني بوجود كافة البيانات، ورفع حالة جميع الوثائق من تصاريح
                                             ورخص، مع بيان حالة استيفائها، ومواعيد تجديدها أو انتهائها ، الإحاطة
                                             الشاملة مع توفير كافة البيانات المتعلقة بوثائق السيارات وحالة تأمينها

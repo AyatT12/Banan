@@ -109,7 +109,7 @@ export default function RenterIDCheck({ setShowVerificationInput, renterId, setR
             </div>
             <div className="col-lg-4">
               <div className="row g-2">
-                <p> <Trans i18nKey="SendOption"> تحقق من خلال  </Trans> </p>
+                <p> <Trans i18nKey="SendOption"> التحقق من خلال  </Trans> </p>
                 <div className="col-auto">
                   <button
                     className="SendwayBtn"
