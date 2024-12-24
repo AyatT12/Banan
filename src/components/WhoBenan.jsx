@@ -13,8 +13,8 @@ export default function WhoBenan() {
  
   
     return <>
-    <section className="feature section   wow fadeInUp my-5 "     > 
-    <div className="container benan_container wow fadeInRigh mt-5 " data-wow-delay=".5s">
+    <section className="feature section   wow fadeInUp my-5 contract-contact-container"     > 
+    <div className="container benan_container wow fadeInRigh mt-5  " data-wow-delay=".5s">
             <div className="row">
                 <div className="col-12">
                     <div className="section-title-sm text-center mb-5">
