@@ -22,7 +22,7 @@ export default function WhoBenan() {
                         <h2 className="wow fadeInUp" data-wow-delay=".2s">
                         <Trans  i18nKey="benan"> بنان </Trans>
                         </h2>
-                        <h5 className="wow fadeInUp pt-3" data-wow-delay=".3s"> <Trans i18nKey="subtitle">الخيار الأمثل لإدارة شركات ومكاتب تأجير السيارات</Trans>
+                        <h5 className="wow fadeInUp p-3" data-wow-delay=".3s"> <Trans i18nKey="subtitle">الخيار الأمثل لإدارة شركات ومكاتب تأجير السيارات</Trans>
                         </h5>
                     </div>
                 </div>
