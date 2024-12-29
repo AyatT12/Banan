@@ -68,8 +68,8 @@ export default function TrialVersion() {
   return (
     <>
       <div className="section">
-        <div className="container pt-5 mt-5">
-          <div className="row  align-items-center pt-100">
+        <div className="container pt-2 mt-5 inner-container">
+          <div className="row  align-items-center pt-100 w-100">
             <div className="col-md-10 col-lg-7  p-5 contact-form-div">
               <h1 className="fs-2">
                 <Trans i18nKey="TrialTitle">طلب نسخة تجريبية</Trans>
@@ -146,7 +146,7 @@ export default function TrialVersion() {
                       className="form-control"
                       id="Body"
                       name="Body"
-                      rows="2"
+                      rows="1"
                       value={values.Body}
                       onChange={handleChange}
                     ></textarea>

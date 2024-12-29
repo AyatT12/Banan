@@ -13,15 +13,16 @@ export default function WhoBenan() {
  
   
     return <>
-    <section className="feature section   wow fadeInUp my-5 contract-contact-container"     > 
-    <div className="container benan_container wow fadeInRigh mt-5  " data-wow-delay=".5s">
+    <section className="feature section   wow fadeInUp"     > 
+    <div className="container inner-container">
+    <div className="benan_container wow fadeInRigh w-100" data-wow-delay=".5s">
             <div className="row">
                 <div className="col-12">
                     <div className="section-title-sm text-center mb-5">
-                        <h2 className="wow fadeInUp" data-wow-delay=".5s">
+                        <h2 className="wow fadeInUp" data-wow-delay=".2s">
                         <Trans  i18nKey="benan"> بنان </Trans>
                         </h2>
-                        <h5 className="wow fadeInUp pt-3" data-wow-delay=".9s"> <Trans i18nKey="subtitle">الخيار الأمثل لإدارة شركات ومكاتب تأجير السيارات</Trans>
+                        <h5 className="wow fadeInUp pt-3" data-wow-delay=".3s"> <Trans i18nKey="subtitle">الخيار الأمثل لإدارة شركات ومكاتب تأجير السيارات</Trans>
                         </h5>
                     </div>
                 </div>
@@ -125,6 +126,7 @@ export default function WhoBenan() {
                 </div>
             </div>
         </div>
+    </div>
         </section>
        
     </>

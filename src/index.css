@@ -479,6 +479,7 @@ h6 {
   padding: 5rem 0rem;
   position: relative;
   box-shadow: 31px 33px 23px -3px rgba(31, 52, 71, 0.5);
+  margin-top: 6rem;
 
 }
 
@@ -786,7 +787,8 @@ h6 {
 /* //////common question//////////// */
 .tabb {
   height: 100%;
-  padding-top: 200px;
+  padding-top: 100px;
+  width: 100%;
 }
 
 .spanTabTitle {
@@ -948,6 +950,7 @@ h6 {
 .price-tag {
   font-size: 20px;
   font-weight: 600;
+  color: #0183C0;
 }
 
 .scroll-button {
@@ -1237,13 +1240,15 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 
-.contract-contact-container {
+.inner-container {
   min-height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+.OutletDiv{
+  min-height: 70vh;
+}
 @media (max-height: 550px) {
   .navbar {
     position: relative !important;
@@ -1365,13 +1370,11 @@ body::-webkit-scrollbar-thumb:hover {
 /*  */
 
 .SendwayBtn {
-  /* width: 140px; */
   cursor: pointer;
   transition: transform 0.2s;
   border: 1px solid #8bc4db;
   border-radius: 5px;
   padding: 4px 25px;
-  /* margin: 10px 0; */
   background-color: white;
   font-size: 20px;
   box-shadow: 1px 1px 1px gray;
@@ -1385,14 +1388,30 @@ body::-webkit-scrollbar-thumb:hover {
 .SendWayInput:checked+.SendWayCard {
   background-color: #8bc4db;
   color: white;
+  border: 1px solid #8bc4db;
 }
 
+.SendwayBtn:disabled {
+  color: white;
+  cursor: pointer;
+  transition:none;
+  border: 1px solid #8bc4db;
+  border-radius: 5px;
+  padding: 4px 25px;
+  background-color: #8bc4db;
+  font-size: 20px;
+  box-shadow: 1px 1px 1px gray;
+}
+.SendwayBtn:hover:disabled {
+  transform: none;
+  box-shadow: 1px 1px 1px gray;
+}
 .SendWayIcon {
   font-size: 20px;
 }
 
 .OTP-alert {
-  padding: 5px 10px;
+  padding: 10px 0px;
   color: #58151c;
 }
 
@@ -1422,4 +1441,12 @@ fieldset:disabled .btn {
 
 .chakra-collapse {
   font-size: 1rem;
+}
+.form-control:disabled {
+  background-color: #f7f9fb;
+  opacity: 1;
+  border: 2px solid #cbd9df;
+}
+.alert-danger{
+  font-size: .9375rem;
 }

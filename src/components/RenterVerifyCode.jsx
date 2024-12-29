@@ -5,7 +5,7 @@ import { useFormik } from "formik";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-export default function RenterVerifyCode({ renterId, showVerificationInput , SetIdErrorMsg }) {
+export default function RenterVerifyCode({ renterId, showVerificationInput, SetIdErrorMsg }) {
   const [timeLeft, setTimeLeft] = useState(0);
   const [isTimeUp, setIsTimeUp] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
@@ -115,7 +115,8 @@ export default function RenterVerifyCode({ renterId, showVerificationInput , Set
       const response = await axios.get("https://bnan.ghyum.sa/BnanApi/api/Renters/SendVerificationCode/", {
         params: { RenterId: renterId },
       });
-
+      setTimeLeft(300);
+      setIsTimeUp(false);
     } catch (error) {
       if (isRTL) {
         SetIdErrorMsg(error.response?.data?.arMessage);
@@ -149,7 +150,7 @@ export default function RenterVerifyCode({ renterId, showVerificationInput , Set
                 className="form-control contract_input mb-2"
                 id="OTP"
                 name="OTP"
-                disabled={isLoading}
+                disabled={!showVerificationInput || isLoading}
               />
               {formik.errors.OTP && formik.touched.OTP && (
                 <p className="alert alert-danger mb-1 py-1 px-2">
@@ -157,16 +158,23 @@ export default function RenterVerifyCode({ renterId, showVerificationInput , Set
                 </p>
               )}
               {errorMsg && (
-                <div className="alert alert-danger mb-1 ">{errorMsg}</div>
+                <div className="alert alert-danger mb-1 py-1 px-2 ">{errorMsg}</div>
               )}
             </div>
             <div className="col-lg-8 OTP-alert">
               <p>
-                <i className="mx-1 bi bi-exclamation-octagon-fill"></i>
-                <Trans i18nKey="OtpAlert">برجاء ادخال الرمز المرسل الي رقم هاتفك في خلال</Trans>
-                {" "}
-                {formatTime(timeLeft)}
+                {showVerificationInput ? (
+                  <>
+                    <i className="mx-1 bi bi-exclamation-octagon-fill"></i>
+                    <Trans i18nKey="OtpAlert">برجاء ادخال الرمز المرسل الي رقم هاتفك في خلال</Trans>
+                    {" "}
+                    {formatTime(timeLeft)}
+                  </>
+                ) : (
+                  ""
+                )}
               </p>
+
             </div>
           </div>
         </div>
@@ -176,7 +184,7 @@ export default function RenterVerifyCode({ renterId, showVerificationInput , Set
               <button
                 type="submit"
                 className="btn btn-primary search-button px-4 py-2"
-                disabled={isLoading}
+                disabled={!showVerificationInput || isLoading}
               >
                 {isLoading ? <i className="fa-solid fa-spinner fa-spin"></i> : <Trans i18nKey="Confirm">تأكيد</Trans>}
               </button>

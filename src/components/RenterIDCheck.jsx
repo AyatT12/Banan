@@ -5,11 +5,13 @@ import { useFormik } from "formik";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 
-export default function RenterIDCheck({ setShowVerificationInput, renterId, setRenterId, IdErrorMsg, SetIdErrorMsg }) {
+export default function RenterIDCheck({ setShowVerificationInput, renterId, setRenterId, IdErrorMsg, SetIdErrorMsg , onSubmit }) {
   const { t } = useTranslation();
   const [errorMsg, setErrorMsg] = useState();
   const [RequirdMessage, setRequirdMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [ActiveID, setActiveID] = useState(false);
+
   const isRTL = document.body.dir === "rtl";
   useEffect(() => {
     if (isRTL) {
@@ -39,8 +41,11 @@ export default function RenterIDCheck({ setShowVerificationInput, renterId, setR
 
         if (response.data.code === 200) {
           setShowVerificationInput(true);
+          onSubmit(); 
+          setActiveID(true)
         } else {
           setShowVerificationInput(false);
+          setActiveID(false)
         }
       } catch (error) {
         if (isRTL) {
@@ -92,8 +97,9 @@ export default function RenterIDCheck({ setShowVerificationInput, renterId, setR
                   if (value.trim() === "") {
                     setErrorMsg(undefined);
                     SetIdErrorMsg(undefined);
-
                   }
+                  setErrorMsg(undefined);
+                  SetIdErrorMsg(undefined);
                 }}
                 value={formik.values.RenterId}
                 type="text"
@@ -101,11 +107,13 @@ export default function RenterIDCheck({ setShowVerificationInput, renterId, setR
                 id="RenterId"
                 name="RenterId"
                 autoComplete="off"
+                disabled={ActiveID}
+
               />
               {formik.errors.RenterId && formik.touched.RenterId && (
                 <p className="alert alert-danger mb-1 py-1 px-2">{formik.errors.RenterId}</p>
               )}
-              {(errorMsg || IdErrorMsg) && <div className="alert alert-danger">{errorMsg || IdErrorMsg}</div>}
+              {(errorMsg || IdErrorMsg) && <div className="alert alert-danger mb-1 py-1 px-2">{errorMsg || IdErrorMsg}</div>}
             </div>
             <div className="col-lg-4">
               <div className="row g-2">
@@ -115,13 +123,13 @@ export default function RenterIDCheck({ setShowVerificationInput, renterId, setR
                     className="SendwayBtn"
                     type="submit"
                     id="Whatsapp"
-                    disabled={isLoading}
+                    disabled={isLoading||ActiveID}
                   >
                     {isLoading ? <i className="fa-solid fa-spinner fa-spin"></i> : <i className="bi bi-whatsapp SendWayIcon"></i>}
                   </button>
                 </div>
                 <div className="col-auto">
-                  <button className="SendwayBtn" type="button" id="SMS" onClick={AlertFunction}>
+                  <button className="SendwayBtn" type="button" id="SMS" onClick={AlertFunction}   disabled={isLoading||ActiveID}>
                     <i className="bi bi-chat-square-text SendWayIcon"></i>
                   </button>
                 </div>

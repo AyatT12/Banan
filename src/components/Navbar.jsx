@@ -140,7 +140,7 @@ export default function Navbar() {
               <div className="row buttond-flex flex-column flex-md-row align-items-start align-items-md-center mb-3">
                 <div className="row button wow flex-row fadeInUp d-flex align-items-center g-2 flex-lg-nowrap buttons-div " data-wow-delay=".2s">
                   <div className='col-auto' >
-                    <a href='http://45.63.18.63/' target='blank' className="btn btn-default-outline  ">
+                    <a href='https://system.ghyum.sa/Identity/Account/Login' target='blank' className="btn btn-default-outline  ">
                       <Trans i18nKey="benan-system">نظام بنان</Trans>
                     </a>
                   </div>

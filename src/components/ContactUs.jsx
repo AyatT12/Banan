@@ -12,7 +12,7 @@ export default function ContactUs() {
   }, []);
   return <>
     <section id="contact" className="contact section ">
-        <div className="container contract-contact-container">
+        <div className="container inner-container">
             <div className="row  align-items-center pt-5 justify-content-center mt-5  w-100">
                 <div className="col-md-7  p-4 py-5 contact-form-div text-center wow  fadeInUp " data-wow-delay=".2s">
                    <h1 className="fs-2">    <Trans i18nKey="contact-channels"> قنوات التواصل   </Trans>  </h1>

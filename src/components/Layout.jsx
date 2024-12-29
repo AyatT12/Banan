@@ -7,7 +7,9 @@ export default function Layout() {
   
   return <>
       <Navbar/>
+      <div className="OutletDiv">
       <Outlet/>
+      </div>
       <ScrollToTop/>
       <Footer/>
      </>
